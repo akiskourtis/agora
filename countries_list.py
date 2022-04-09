@@ -1,5 +1,5 @@
 
-countries = [
+countries_arr = [
     ('US', 'United States'),
     ('AF', 'Afghanistan'),
     ('AL', 'Albania'),
