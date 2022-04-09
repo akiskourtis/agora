@@ -1,17 +1,29 @@
 import random
+import requests
+import json
 
 
 def random_countries(n):
     countries = []
-    for x in range (0, n-1):
-        countries.append(countries_arr[random.randint(1,200)][1])
+    for x in range (0, n):
+        countries.append(countries_arr[random.randint(1,5)][1])
     return countries
 
 def random_coords(n):
     coords = []
-    for x in range (0, n-1):
+    for x in range (0, n):
         coords.append((random.random()*2.0, random.random()*2.0))
     return coords
+
+def get_random_coords_db():
+    api_url = "http://127.0.0.1:5001/random_loc"
+
+    response = requests.get(api_url)
+    coords = response.json()
+    return coords
+
+
+mobile_os = [ "Android", "iOS"]
 
 countries_arr = [
     ('US', 'United States'),
